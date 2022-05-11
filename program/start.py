@@ -157,7 +157,7 @@ async def help(client: Client, message: Message):
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{BOT_PHOTO}",
-        caption=f"""🙂╖ **مرحبآ عزيزي ↤「 {message.from_user.mention()} 」**\n🤖╢ **انا بوت {BOT_NAME}  🎵**\n🎧╜ **لمعرفة الاوامر اضغط علي  » الاوامر !**""",
+        caption=f"""🙂╖ **مرحبآ عزيزي ↤「 {message.from_user.mention()} 」**\n🤖╢ **انا بوت {BOT_NAME}  🎵**\n🎧╜ **لمعرفة اوامر تشغيل اضغط علي  » الاوامر !**""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
