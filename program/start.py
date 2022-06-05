@@ -198,13 +198,12 @@ def ids(client: Client, message: Message):
     elketib = message.reply_to_message
     if elketib:
         message.reply_text(
-            f"Name: {message.from_user.mention()}\n⌯¦اسمڪ  {massage.from_user.id}\nUserName: @{massage.from_user.username}"
+            f"Name: {message.from_user.mention()}\nid: {massage.from_user.id}\nUserName: @{massage.from_user.username}"
         )
     else:
         message.reply(
-            f"⚜️╖  اسمڪ ⇇ {message.from_user.mention()}\n🆔╢ ايدِيڪ ⇇ {message.from_user.id}\n⏺╜ يوزرڪ @{massage.from_user.username}"
+            f"Name: {message.from_user.mention()}\nYour id: {message.from_user.id}\nUserName: @{massage.from_user.username}"
         )
-
 
 @Client.on_message(command(["ping", "ينج", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
