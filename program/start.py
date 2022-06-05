@@ -182,8 +182,19 @@ async def start(client: Client, message: Message):
   )
 
 
+
+@Client.on_message(
+    filters.command(["قول"])
+    & filters.group
+    & ~filters.edited
+)
+def echo(client, msg):
+    text = msg.text.split(None, 1)[1]
+    msg.reply(text)
+
+
 @Client.on_message(filters.command("رتبتي"))
-def forward(client, message):
+def forward(client: Client, message: Message):
   chat_id = message.chat.id
   user_id = message.from_user.id
   rank = app.get_chat_member(chat_id, user_id)
