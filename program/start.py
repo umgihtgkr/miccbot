@@ -184,33 +184,13 @@ async def start(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["ول","قول" f"take@{BOT_USERNAME}"])
+    filters.command(["قول"])
     & filters.group
     & ~filters.edited
 )
 def echo(client, msg):
     text = msg.text.split(None, 1)[1]
     msg.reply(text)
-
-
-@Client.on_message(filters.command("رتبتي"))
-def forward(client: Client, message: Message):
-  chat_id = message.chat.id
-  user_id = message.from_user.id
-  rank = Client.get_chat_member(chat_id, user_id)
-  rank = rank.status
-  if rank == "administrator":
-   Client.send_message(chat_id,"مسؤال")
-  elif rank == "creator":
-   Client.send_message(chat_id,"المنشئ يعم")
-  elif rank == "member":
-   Client.send_message(chat_id,"عضو زليل")
-  elif rank == "restricted":
-   Client.send_message(chat_id,"عضو متقيد")
-  elif rank == "left":
-   Client.send_message(chat_id,"انتا مغادر يعم")
-  elif rank == "kicked":
-   Client.send_message(chat_id,"الراجل ده واخد بالجزمه ومحظور")
 
 
 @Client.on_message(command(["ping", "ينج", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
