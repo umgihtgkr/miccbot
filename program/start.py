@@ -195,11 +195,11 @@ def ids(client: Client, message: Message):
     elketib = message.reply_to_message
     if elketib:
         message.reply_text(
-            f"Name: {message.from_user.mention()}\nid: {massage.from_user.id}"
+            f"⚜️╖  اسمڪ ⇇ {message.from_user.mention()}\n🆔╢ ايدِيڪ ⇇ {massage.from_user.id}\nUserName: @{massage.from_user.username}"
         )
     else:
         message.reply(
-            f"Name: {message.from_user.mention()}\nYour id: {message.from_user.id}\nUserName: @{massage.from_user.username}"
+            f"⚜️╖  اسمڪ ⇇ {message.from_user.mention()}\n🆔╜ ايدِيڪ ⇇ {message.from_user.id}"
         )
 
 @Client.on_message(command(["ping", "ينج", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
