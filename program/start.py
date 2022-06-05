@@ -184,7 +184,7 @@ async def start(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["قول"])
+    filters.command(["ول","قول" f"take@{BOT_USERNAME}"])
     & filters.group
     & ~filters.edited
 )
