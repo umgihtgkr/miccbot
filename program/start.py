@@ -183,10 +183,7 @@ async def start(client: Client, message: Message):
 
 
 
-@Client.on_message(
-    filters.command(["قول"])
-    & filters.group
-    & ~filters.edited
+@Client.on_message(command(["قول", "ول"]) & filters.group & ~filters.edited
 )
 def echo(client, msg):
     text = msg.text.split(None, 1)[1]
@@ -198,7 +195,7 @@ def ids(client: Client, message: Message):
     elketib = message.reply_to_message
     if elketib:
         message.reply_text(
-            f"Name: {message.from_user.mention()}\nid: {massage.from_user.id}\nUserName: @{massage.from_user.username}"
+            f"Name: {message.from_user.mention()}\nid: {massage.from_user.id}"
         )
     else:
         message.reply(
