@@ -2,6 +2,7 @@
 
 from driver.queues import QUEUE
 from pyrogram import Client, filters
+from program.utils.inline import menu_markup, stream_markup
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from config import (
     BOT_PHOTO,
